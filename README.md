@@ -62,7 +62,7 @@ MY_PORTFOLIO/
 
 ## 🔗 Live Demo
 
-Visit the live website at: [https://prithvishshukla.github.io/](https://prithvishshukla.github.io/)
+Visit the live website at: [https://prithvishshukla.github.io/]([https://prithvishshukla.github.io/](https://prithvishshukla.github.io/MY_PORTFOLIO_WEBSITE/)
 
 ## 📝 License
 
