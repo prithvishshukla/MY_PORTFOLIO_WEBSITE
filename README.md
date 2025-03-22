@@ -18,7 +18,7 @@ A modern, responsive portfolio website showcasing my work as a Software Develope
 - CSS3
 - JavaScript
 - Font Awesome Icons
-- Google Fonts
+- Google Fonts:
   - Playfair Display
   - Space Mono
   - Inter
@@ -55,6 +55,8 @@ MY_PORTFOLIO/
 ├── assets/
 │   ├── css/
 │   │   └── main.css
+│   ├── js/
+│   │   └── main.js
 │   └── img/
 │       └── [images]
 └── README.md
@@ -62,15 +64,18 @@ MY_PORTFOLIO/
 
 ## 🔗 Live Demo
 
-Visit the live website at: [https://prithvishshukla.github.io/]([https://prithvishshukla.github.io/](https://prithvishshukla.github.io/MY_PORTFOLIO_WEBSITE/)
+Visit the live website at: [Prithvish Raj Shukla Portfolio](https://prithvishshukla.github.io/MY_PORTFOLIO_WEBSITE/)
 
 ## 📝 License
 
-This project is open source and available under the MIT License.
+This project is open-source and available under the MIT License.
 
 ## 🤝 Contact
 
-Feel free to reach out through the contact form on the website or connect with me on social media.
+Feel free to reach out through the contact form on the website or connect with me on social media:
+- LinkedIn: [@prithvishshukla](https://www.linkedin.com/in/prithvishshukla)
+- Twitter: [@prithvishshukla](https://twitter.com/prithvishshukla)
+- GitHub: [@prithvishshukla](https://github.com/prithvishshukla)
 
 ---
 Made with ❤️ by Prithvish Raj Shukla
