@@ -83,7 +83,7 @@ MY_PORTFOLIO/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/prithvishshukla/MY_PORTFOLIO.git
+   git clone https://github.com/prithvishshukla/MY_PORTFOLIO_WEBSITE.git
    ```
 
 2. Navigate to the project directory:
