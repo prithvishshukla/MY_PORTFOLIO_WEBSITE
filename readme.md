@@ -83,7 +83,7 @@ MY_PORTFOLIO/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/MY_PORTFOLIO.git
+   git clone https://github.com/prithvishshukla/MY_PORTFOLIO.git
    ```
 
 2. Navigate to the project directory:
@@ -155,7 +155,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 ## 📞 Contact
 
 - Email: prithvishshukla@gmail.com
-- LinkedIn: [Prithvish Raj Shukla](https://www.linkedin.com/in/prithvish-shukla-0b0b0b0b/)
+- LinkedIn: [Prithvish Raj Shukla](https://www.linkedin.com/in/prithvishshukla/)
 - GitHub: [PrithvishShukla](https://github.com/PrithvishShukla)
 - Twitter: [@PrithvishShukla](https://twitter.com/PrithvishShukla)
 
