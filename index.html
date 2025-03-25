@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Portfolio Website of Prithvish Raj Shukla - Software Developer, Web Developer, and Tech Enthusiast" />
+  <meta name="author" content="Prithvish Raj Shukla" />
+  <meta name="keywords"
+    content="Prithvish Raj Shukla, Software Developer, Portfolio, Web Developer, IT, NIET, Greater Noida" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://prithvishshukla.github.io/" />
+  <meta property="og:title" content="Prithvish Raj Shukla - Portfolio" />
+  <meta property="og:description"
+    content="Portfolio Website of Prithvish Raj Shukla - Software Developer, Web Developer, and Tech Enthusiast" />
+  <meta property="og:image" content="./assets/img/prithvish_profile.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://prithvishshukla.github.io/" />
+  <meta property="twitter:title" content="Prithvish Raj Shukla - Portfolio" />
+  <meta property="twitter:description"
+    content="Portfolio Website of Prithvish Raj Shukla - Software Developer, Web Developer, and Tech Enthusiast" />
+  <meta property="twitter:image" content="./assets/img/prithvish_profile.jpg" />
+
+  <link rel="shortcut icon" href="./assets/img/portfolio.ico" />
+  <title>Prithvish Raj Shukla - Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  
+  <style>
+    /* Performance optimization for animations */
+    .gpu-accelerated {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+    
+    #stars-bg, #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    
+    #stars-bg {
+      z-index: -1;
+    }
+    
+    #particles-js {
+      z-index: -2;
+    }
+    
+    .floating-element {
+      animation: float 6s ease-in-out infinite;
+      transform: translateZ(0); /* GPU acceleration */
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) translateZ(0); }
+      50% { transform: translateY(-20px) translateZ(0); }
+    }
+    
+    .project-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transform: translateZ(0);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px) translateZ(0);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Remove tilt-element class to fix glitching */
+    .tilt-element {
+      display: none;
+    }
+    
+    /* Fix ripple effect positioning */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(0);
+      animation: ripple 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    @keyframes ripple {
+      to {
+        transform: scale(4) translateZ(0);
+        opacity: 0;
+      }
+    }
+    
+    /* Optimize title rotation performance */
+    .title-wrapper {
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateX(0) rotateY(0);
+      will-change: transform;
+    }
+    
+    .site-title {
+      display: inline-block;
+      backface-visibility: hidden;
+    }
+    
+    /* Fix scroll animation performance */
+    .section-reveal {
+      opacity: 0;
+      transform: translateY(50px) translateZ(0);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform, opacity;
+    }
+    
+    .section-reveal.active {
+      opacity: 1;
+      transform: translateY(0) translateZ(0);
+    }
+    
+    body {
+      position: relative;
+      background: transparent;
+      overflow-x: hidden;
+    }
+    
+    .skill-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .skill-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .project-link, .resume-btn {
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="stars-bg"></canvas>
+  <div id="particles-js"></div>
+  <div class="header">
+    <div class="header-content">
+      <h1>
+        <div class="title-wrapper">
+          <span class="site-title">PRITHVISH</span>
+          <span class="site-title middle">RAJ</span>
+          <span class="site-title">SHUKLA</span>
+        </div>
+        <span class="site-description">
+          <span class="highlight">WEB DEVELOPER</span> •
+          <span class="highlight">TECH ENTHUSIAST</span>
+        </span>
+      </h1>
+    </div>
+    <nav class="header-links">
+      <a class="link" href="#about" data-scroll>ABOUT</a>
+      <a class="link" href="#education" data-scroll>EDUCATION</a>
+      <a class="link" href="#skills" data-scroll>SKILLS</a>
+      <a class="link" href="#projects" data-scroll>PROJECTS</a>
+      <a class="link" href="#certifications" data-scroll>CERTIFICATIONS</a>
+    </nav>
+  </div>
+
+  <section id="about">
+    <div class="user-details">
+      <h1>My Story</h1>
+      <img src="./assets/img/prithvish_profile.jpg" alt="Prithvish Raj Shukla" width="20%" style="border-radius: 50%" />
+      <p>
+        I am a first-year B.Tech student in Information Technology at NIET, Greater Noida, with a passion for
+        Software Development, AI, and DevOps. I have a keen interest in problem-solving, full-stack development,
+        and exploring new technologies.
+      </p>
+      <div class="resume-download">
+        <a href="./assets/pdf/resume.pdf" target="_blank" class="resume-btn">
+          <i class="fas fa-file-pdf"></i>
+          <span>Download Resume</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="connect">
+    <div class="user-details">
+      <h1>Connect With Me</h1>
+      <div class="social-grid">
+        <a href="https://linkedin.com/in/prithvishshukla" target="_blank" class="social-item">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+          <p>Professional Network</p>
+        </a>
+        <a href="https://github.com/prithvishshukla" target="_blank" class="social-item">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+          <p>Code Repository</p>
+        </a>
+        <a href="https://auth.geeksforgeeks.org/user/prithvishshukla" target="_blank" class="social-item">
+          <i class="fas fa-code"></i>
+          <span>GeeksforGeeks</span>
+          <p>Coding Profile</p>
+        </a>
+        <a href="https://leetcode.com/prithvishshukla" target="_blank" class="social-item">
+          <i class="fas fa-terminal"></i>
+          <span>LeetCode</span>
+          <p>Problem Solving</p>
+        </a>
+        <a href="https://instagram.com/prithvishshukla" target="_blank" class="social-item">
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+          <p>Personal Life</p>
+        </a>
+        <a href="https://open.spotify.com/user/s265nw6ey10ka1w198brmhq83?trackId=5FO0ye7LMqJPr4bjroUZ8i" target="_blank"
+          class="social-item">
+          <i class="fab fa-spotify"></i>
+          <span>Spotify</span>
+          <p>Music & Playlists</p>
+        </a>
+        <a href="mailto:prithvishshukla@outlook.com" target="_blank" class="social-item">
+          <i class="fas fa-envelope"></i>
+          <span>Email</span>
+          <p>Direct Contact</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="user-details">
+      <h1>Education</h1>
+      <div class="education-grid">
+        <div class="education-item">
+          <div class="edu-details">
+            <h3>Noida Institute of Engineering & Technology</h3>
+            <p class="degree">Bachelor of Technology - BTech, Information Technology</p>
+            <p class="duration">Sep 2024 - Sep 2028</p>
+          </div>
+        </div>
+
+        <div class="education-item">
+          <div class="edu-details">
+            <h3>Central Board of Secondary Education (CBSE)</h3>
+            <p class="degree">Class 12th</p>
+            <p class="duration">Apr 2021 - May 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="user-details">
+      <h1>Skills</h1>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <i class="fab fa-git-alt"></i>
+          <span>Git</span>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-code"></i>
+          <span>VS Code</span>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-copyright"></i>
+          <span>C</span>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-python"></i>
+          <span>Python</span>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-code"></i>
+          <span>C++</span>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-html5"></i>
+          <span>HTML5</span>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-css3-alt"></i>
+          <span>CSS3</span>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-js"></i>
+          <span>JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="user-details">
+      <h1>Featured Projects</h1>
+    </div>
+    <div class="user-projects">
+      <div class="contents project-card tilt-element">
+        <h3>
+          <i class="fas fa-keyboard"></i>
+          Typing Speed Tester
+        </h3>
+        <div class="project-tech-stack">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
+        <p>
+          A web-based typing speed tester that allows users to measure their typing speed and accuracy.
+          Features include real-time WPM calculation, accuracy tracking, and performance statistics.
+        </p>
+        <div class="project-links">
+          <a class="project-link" target="_blank" href="https://github.com/prithvishshukla/typing-speed-tester">
+            <i class="fab fa-github"></i>
+            View Code
+          </a>
+          <a class="project-link demo-link" target="_blank"
+            href="https://github.com/prithvishshukla/typing-speed-tester">
+            <i class="fas fa-external-link-alt"></i>
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="user-details">
+      <h1>Certifications</h1>
+      <ul>
+        <li>Infosys Next Gen Technologies Certificate</li>
+        <li>Programming Fundamentals using Python - Infosys Springboard</li>
+        <li>Python (Basic) - HackerRank</li>
+        <li>Software Engineer Intern - HackerRank</li>
+        <li>JPMorgan Chase - Investment Banking Job Simulation - Forage</li>
+        <li>View all my certifications on LinkedIn - <a target="_blank"
+            href="https://www.linkedin.com/in/prithvishshukla/details/certifications/">View Certifications</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="buy-me-coffee">
+    <div class="user-details">
+      <h1>Buy Me a Coffee</h1>
+      <div class="coffee-content">
+        <i class="fas fa-coffee coffee-icon"></i>
+        <p>If you find my work helpful, consider buying me a coffee!</p>
+        <div class="payment-options">
+          <a href="https://www.paypal.com/paypalme/rizzvis" target="_blank" class="payment-btn paypal">
+            <i class="fab fa-paypal"></i>
+            PayPal
+          </a>
+          <a href="./assets/upi.html" class="payment-btn upi">
+            <i class="fas fa-mobile-alt"></i>
+            UPI
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="thank-you">
+    <div class="user-details">
+      <h1>Thank You</h1>
+      <div class="thank-you-content">
+        <i class="fas fa-heart heart-icon"></i>
+        <p>Thank you for visiting my portfolio! I'm passionate about creating meaningful digital experiences.</p>
+        <div class="signature">- Prithvish Raj Shukla</div>
+        <a href="https://github.com/prithvishshukla/MY_PORTFOLIO_WEBSITE/" target="_blank" class="source-code-link">
+          <i class="fab fa-github"></i>
+          View Source Code
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="copyright">&copy; 2025 Prithvish Raj Shukla. All Rights Reserved.</p>
+      <p class="footer-text">Made with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i></p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/stars.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+
+</html>

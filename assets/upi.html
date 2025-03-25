@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Payment - Prithvish Raj Shukla</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/upi.css">
+</head>
+<body>
+    <a href="../index.html" class="back-to-portfolio">
+        <i class="fas fa-arrow-left"></i>
+        Back to Portfolio
+    </a>
+
+    <section class="upi-section">
+        <div class="upi-container">
+            <div class="upi-header">
+                <h1>UPI Payment</h1>
+                <p>Scan QR code or use UPI ID to make a payment</p>
+            </div>
+
+            <div class="upi-details">
+                <div class="upi-id">
+                    prithvishxshukla@oksbi
+                </div>
+
+                <div class="upi-actions">
+                    <button class="upi-btn" onclick="copyUPI()">
+                        <i class="fas fa-copy"></i>
+                        Copy UPI ID
+                    </button>
+                    <button class="upi-btn" onclick="openUPI()">
+                        <i class="fas fa-mobile-alt"></i>
+                        Open UPI App
+                    </button>
+                </div>
+
+                <div class="upi-qr">
+                    <img src="img/upi.jpg" alt="UPI QR Code">
+                    <p>Scan this QR code to pay</p>
+                </div>
+
+                <div class="upi-instructions">
+                    <h3>How to Pay</h3>
+                    <ol>
+                        <li>Open any UPI payment app on your phone</li>
+                        <li>Scan the QR code or enter the UPI ID manually</li>
+                        <li>Enter the amount you want to pay</li>
+                        <li>Review and confirm the payment</li>
+                        <li>Enter your UPI PIN to complete the transaction</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function copyUPI() {
+            const upiId = 'prithvishxshukla@oksbi';
+            navigator.clipboard.writeText(upiId).then(() => {
+                alert('UPI ID copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy UPI ID:', err);
+            });
+        }
+
+        function openUPI() {
+            const upiId = 'prithvishxshukla@oksbi';
+            window.location.href = `upi://pay?pa=${upiId}`;
+        }
+    </script>
+</body>
+</html> 
