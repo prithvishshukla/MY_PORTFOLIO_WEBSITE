@@ -51,127 +51,7 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  
-  <style>
-    /* Performance optimization for animations */
-    .gpu-accelerated {
-      transform: translateZ(0);
-      will-change: transform;
-    }
-    
-    #stars-bg, #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-    
-    #stars-bg {
-      z-index: -1;
-    }
-    
-    #particles-js {
-      z-index: -2;
-    }
-    
-    .floating-element {
-      animation: float 6s ease-in-out infinite;
-      transform: translateZ(0); /* GPU acceleration */
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) translateZ(0); }
-      50% { transform: translateY(-20px) translateZ(0); }
-    }
-    
-    .project-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px); /* Safari support */
-      border-radius: 15px;
-      padding: 20px;
-      margin: 20px 0;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transform: translateZ(0);
-    }
-    
-    .project-card:hover {
-      transform: translateY(-5px) translateZ(0);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Remove tilt-element class to fix glitching */
-    .tilt-element {
-      display: none;
-    }
-    
-    /* Fix ripple effect positioning */
-    .ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.4);
-      transform: scale(0);
-      animation: ripple 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      pointer-events: none;
-      z-index: 1;
-    }
-    
-    @keyframes ripple {
-      to {
-        transform: scale(4) translateZ(0);
-        opacity: 0;
-      }
-    }
-    
-    /* Optimize title rotation performance */
-    .title-wrapper {
-      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      transform-style: preserve-3d;
-      transform: perspective(1000px) rotateX(0) rotateY(0);
-      will-change: transform;
-    }
-    
-    .site-title {
-      display: inline-block;
-      backface-visibility: hidden;
-    }
-    
-    /* Fix scroll animation performance */
-    .section-reveal {
-      opacity: 0;
-      transform: translateY(50px) translateZ(0);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      will-change: transform, opacity;
-    }
-    
-    .section-reveal.active {
-      opacity: 1;
-      transform: translateY(0) translateZ(0);
-    }
-    
-    body {
-      position: relative;
-      background: transparent;
-      overflow-x: hidden;
-    }
-    
-    .skill-item {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .skill-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    
-    .project-link, .resume-btn {
-      position: relative;
-      overflow: hidden;
-    }
-  </style>
+
 </head>
 
 <body>
@@ -205,7 +85,7 @@
       <h1>My Story</h1>
       <img src="./assets/img/prithvish_profile.jpg" alt="Prithvish Raj Shukla" width="20%" style="border-radius: 50%" />
       <p>
-        I am a first-year B.Tech student in Information Technology at NIET, Greater Noida, with a passion for
+        I am a Second-year B.Tech student in Information Technology at NIET, Greater Noida, with a passion for
         Software Development, AI, and DevOps. I have a keen interest in problem-solving, full-stack development,
         and exploring new technologies.
       </p>
