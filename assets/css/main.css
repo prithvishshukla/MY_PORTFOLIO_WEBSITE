@@ -1590,12 +1590,7 @@ section,
       transform: translateY(-5px) translateZ(0);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
-    
-    /* Remove tilt-element class to fix glitching */
-    .tilt-element {
-      display: none;
-    }
-    
+   
     /* Fix ripple effect positioning */
     .ripple {
       position: absolute;
